@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 2
+Release  : 3
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
@@ -62,8 +62,8 @@ dev components for the openjdk9 package.
 %package lib 
 Summary: lib components for the openjdk9 package.
 Group: Libraries 
-Provides : libjli.so()(64bit)
-Provides : libjli.so(SUNWprivate_1.1)(64bit)
+Provides : libjli9.so()(64bit)
+Provides : libjli9.so(SUNWprivate_1.1)(64bit)
 
 %description lib
 lib components for the openjdk9 package.
