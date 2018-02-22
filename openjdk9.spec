@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 1
+Release  : 2
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
@@ -97,7 +97,6 @@ cp -r build/linux-x86_64-normal-server-release/images/jdk/* %{buildroot}/usr/lib
 rm -f %{buildroot}/usr/lib/jvm/java-1.9.0-openjdk/lib/security/cacerts
 ln -s /var/cache/ca-certs/compat/ca-roots.keystore %{buildroot}/usr/lib/jvm/java-1.9.0-openjdk/lib/security/cacerts
 
-# Openjdk 8 already do this.
 mkdir -p %{buildroot}/usr/lib64
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli9.so %{buildroot}/usr/lib64/libjli9.so
 
