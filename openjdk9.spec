@@ -30,6 +30,7 @@ BuildRequires : glibc-bin
 Requires : openjdk9-lib
 Requires : openjdk9-bin
 Requires : openjdk9-doc
+Patch1   : 0001-openjdk9-rename-jli-as-jli9.patch
 
 %description
 OpenJDK (Open Java Development Kit) is a free and open source implementation of
@@ -69,6 +70,7 @@ lib components for the openjdk9 package.
 
 %prep
 %setup -q -n jdk9
+%patch1 -p1
 
 %build
 CLR_TRUST_STORE=%{_builddir}/trust-store clrtrust generate
@@ -96,8 +98,8 @@ rm -f %{buildroot}/usr/lib/jvm/java-1.9.0-openjdk/lib/security/cacerts
 ln -s /var/cache/ca-certs/compat/ca-roots.keystore %{buildroot}/usr/lib/jvm/java-1.9.0-openjdk/lib/security/cacerts
 
 # Openjdk 8 already do this.
-#mkdir -p %{buildroot}/usr/lib64
-#ln -s /usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli.so %{buildroot}/usr/lib64/libjli.so
+mkdir -p %{buildroot}/usr/lib64
+ln -s /usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli9.so %{buildroot}/usr/lib64/libjli9.so
 
 mkdir -p %{buildroot}/usr/bin
 # Basic binaries
@@ -671,8 +673,8 @@ ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/xjc %{buildroot}/usr/bin/xjc9
 /usr/lib/jvm/java-1.9.0-openjdk/lib/ct.sym
 /usr/lib/jvm/java-1.9.0-openjdk/lib/jexec
 /usr/lib/jvm/java-1.9.0-openjdk/lib/jexec.diz
-/usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli.diz
-/usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli.so
+/usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli9.diz
+/usr/lib/jvm/java-1.9.0-openjdk/lib/jli/libjli9.so
 /usr/lib/jvm/java-1.9.0-openjdk/lib/jrt-fs.jar
 /usr/lib/jvm/java-1.9.0-openjdk/lib/jvm.cfg
 /usr/lib/jvm/java-1.9.0-openjdk/lib/libattach.diz
@@ -758,6 +760,7 @@ ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/xjc %{buildroot}/usr/bin/xjc9
 /usr/lib/jvm/java-1.9.0-openjdk/lib/server/libjvm.so
 /usr/lib/jvm/java-1.9.0-openjdk/lib/src.zip
 /usr/lib/jvm/java-1.9.0-openjdk/lib/tzdb.dat
+/usr/lib64/libjli9.so
 
 %files dev
 %defattr(-,root,root,-)

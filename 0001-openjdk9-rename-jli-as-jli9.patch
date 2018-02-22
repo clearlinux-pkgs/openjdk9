@@ -1,0 +1,67 @@
+From 64d8e27bda75eb32ae2ae837a682b851bbca3630 Mon Sep 17 00:00:00 2001
+From: Josue David Hernandez <josue.d.hernandez.gutierrez@intel.com>
+Date: Thu, 22 Feb 2018 13:18:14 -0600
+Subject: [PATCH] openjdk9: rename jli as jli9
+
+Signed-off-by: Josue David Hernandez <josue.d.hernandez.gutierrez@intel.com>
+---
+ jdk/make/launcher/LauncherCommon.gmk | 4 ++--
+ jdk/make/lib/CoreLibraries.gmk       | 2 +-
+ jdk/make/lib/Lib-java.instrument.gmk | 6 +++---
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/jdk/make/launcher/LauncherCommon.gmk b/jdk/make/launcher/LauncherCommon.gmk
+index a417803..00a99ba 100644
+--- a/jdk/make/launcher/LauncherCommon.gmk
++++ b/jdk/make/launcher/LauncherCommon.gmk
+@@ -196,8 +196,8 @@ define SetupBuildLauncherBody
+       MAPFILE := $$($1_MAPFILE), \
+       LIBS := $(JDKEXE_LIBS) $$($1_LIBS), \
+       LIBS_unix := $$($1_LIBS_unix), \
+-      LIBS_linux := -lpthread -ljli $(LIBDL) -lc, \
+-      LIBS_solaris := -ljli -lthread $(LIBDL) -lc, \
++      LIBS_linux := -lpthread -ljli9 $(LIBDL) -lc, \
++      LIBS_solaris := -ljli9 -lthread $(LIBDL) -lc, \
+       LIBS_windows := $$($1_WINDOWS_JLI_LIB) \
+           $(SUPPORT_OUTPUTDIR)/native/java.base/libjava/java.lib advapi32.lib \
+           $$($1_LIBS_windows), \
+diff --git a/jdk/make/lib/CoreLibraries.gmk b/jdk/make/lib/CoreLibraries.gmk
+index 5bb9394..5519f29 100644
+--- a/jdk/make/lib/CoreLibraries.gmk
++++ b/jdk/make/lib/CoreLibraries.gmk
+@@ -354,7 +354,7 @@ ifneq ($(USE_EXTERNAL_LIBZ), true)
+ endif
+ 
+ $(eval $(call SetupNativeCompilation,BUILD_LIBJLI, \
+-    LIBRARY := jli, \
++    LIBRARY := jli9, \
+     OUTPUT_DIR := $(LIBJLI_OUTPUT_DIR), \
+     SRC := $(LIBJLI_SRC_DIRS), \
+     EXCLUDE_FILES := $(LIBJLI_EXCLUDE_FILES), \
+diff --git a/jdk/make/lib/Lib-java.instrument.gmk b/jdk/make/lib/Lib-java.instrument.gmk
+index 64f25d0..7d3c28d 100644
+--- a/jdk/make/lib/Lib-java.instrument.gmk
++++ b/jdk/make/lib/Lib-java.instrument.gmk
+@@ -69,8 +69,8 @@ $(eval $(call SetupNativeCompilation,BUILD_LIBINSTRUMENT, \
+     LDFLAGS_aix := -L$(SUPPORT_OUTPUTDIR)/native/java.base, \
+     LIBS := $(JDKLIB_LIBS), \
+     LIBS_unix := -ljava -ljvm $(LIBZ), \
+-    LIBS_linux := -ljli $(LIBDL), \
+-    LIBS_solaris := -ljli $(LIBDL), \
++    LIBS_linux := -ljli9 $(LIBDL), \
++    LIBS_solaris := -ljli9 $(LIBDL), \
+     LIBS_aix := -liconv -ljli_static $(LIBDL), \
+     LIBS_macosx := -liconv -framework Cocoa -framework Security \
+         -framework ApplicationServices \
+@@ -88,7 +88,7 @@ $(eval $(call SetupNativeCompilation,BUILD_LIBINSTRUMENT, \
+ ifneq (, $(findstring $(OPENJDK_TARGET_OS), macosx windows aix))
+   $(BUILD_LIBINSTRUMENT): $(SUPPORT_OUTPUTDIR)/native/java.base/$(LIBRARY_PREFIX)jli_static$(STATIC_LIBRARY_SUFFIX)
+ else
+-  $(BUILD_LIBINSTRUMENT): $(call FindLib, java.base, jli, /jli)
++  $(BUILD_LIBINSTRUMENT): $(call FindLib, java.base, jli9, /jli)
+ endif
+ $(BUILD_LIBINSTRUMENT): $(BUILD_LIBJAVA)
+ 
+-- 
+2.16.1
+
