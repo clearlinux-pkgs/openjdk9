@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 3
+Release  : 4
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
@@ -140,7 +140,6 @@ ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/jshell %{buildroot}/usr/bin/jshell9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/jstack %{buildroot}/usr/bin/jstack9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/jstat %{buildroot}/usr/bin/jstat9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/jstatd %{buildroot}/usr/bin/jstatd9
-ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/native2ascii %{buildroot}/usr/bin/native2ascii9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/rmic %{buildroot}/usr/bin/rmic9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/schemagen %{buildroot}/usr/bin/schemagen9
 ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/serialver %{buildroot}/usr/bin/serialver9
@@ -788,7 +787,6 @@ ln -s /usr/lib/jvm/java-1.9.0-openjdk/bin/xjc %{buildroot}/usr/bin/xjc9
 /usr/bin/jstack9
 /usr/bin/jstat9
 /usr/bin/jstatd9
-/usr/bin/native2ascii9
 /usr/bin/rmic9
 /usr/bin/schemagen9
 /usr/bin/serialver9
