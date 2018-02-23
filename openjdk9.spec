@@ -5,7 +5,7 @@ URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0 Apache-2.0 BSD-2-Clause BSD-3-Clause BSD-4-Clause HPND ICU LGPL-2.1 Libpng MIT MPL-2.0-no-copyleft-exception SAX-PD Unicode-TOU W3C
+License  : BSD-3-Clause GPL-2.0 Libpng MIT
 BuildRequires : openjdk
 BuildRequires : openjdk-dev
 BuildRequires : zip
