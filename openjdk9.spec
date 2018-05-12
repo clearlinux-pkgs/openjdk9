@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 5
+Release  : 6
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
@@ -15,11 +15,7 @@ BuildRequires : libXt-dev
 BuildRequires : libXrender-dev
 BuildRequires : libXi-dev
 BuildRequires : libXext-dev
-BuildRequires : xproto-dev
-BuildRequires : xextproto-dev
-BuildRequires : kbproto-dev
-BuildRequires : renderproto-dev
-BuildRequires : inputproto-dev
+BuildRequires : xorgproto-dev
 BuildRequires : cups-dev
 BuildRequires : freetype-dev
 BuildRequires : alsa-lib-dev
