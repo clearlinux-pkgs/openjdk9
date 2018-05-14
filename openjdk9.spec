@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 6
+Release  : 7
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
@@ -75,8 +75,8 @@ bash configure CC=/usr/bin/gcc CXX=/usr/bin/g++ \
 --with-boot-jdk=/usr/lib/jvm/java-1.8.0-openjdk \
 --x-includes=/usr/include/ \
 --x-libraries=/usr/lib64 \
---with-extra-cflags="-O3 $CFLAGS -fno-delete-null-pointer-checks -fno-guess-branch-probability -g1" \
---with-extra-cxxflags="$CXXFLAGS -std=gnu++98 -fno-delete-null-pointer-checks -fno-guess-branch-probability -g1" \
+--with-extra-cflags="-O3 $CFLAGS -fno-delete-null-pointer-checks -g1" \
+--with-extra-cxxflags="$CXXFLAGS -std=gnu++98 -fno-delete-null-pointer-checks -g1" \
 --with-zlib=system \
 --enable-unlimited-crypto \
 --with-cacerts-file=%{_builddir}/trust-store/compat/ca-roots.keystore \
