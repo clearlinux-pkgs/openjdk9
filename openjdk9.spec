@@ -1,6 +1,6 @@
 Name     : openjdk9
 Version  : 9
-Release  : 8
+Release  : 9
 URL      : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Source0  : http://localhost/cgit/projects/jdk9/snapshot/jdk9.tar.gz
 Summary  : No detailed summary available
