@@ -27,6 +27,7 @@ Requires : openjdk9-lib
 Requires : openjdk9-bin
 Requires : openjdk9-doc
 Patch1   : 0001-openjdk9-rename-jli-as-jli9.patch
+Patch2   : CVE-2016-10165.patch
 
 %description
 OpenJDK (Open Java Development Kit) is a free and open source implementation of
@@ -67,6 +68,7 @@ lib components for the openjdk9 package.
 %prep
 %setup -q -n jdk9
 %patch1 -p1
+%patch2 -p1
 
 %build
 CLR_TRUST_STORE=%{_builddir}/trust-store clrtrust generate
